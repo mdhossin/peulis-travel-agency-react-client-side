@@ -6,9 +6,8 @@ import Footer from "../../Footer/Footer";
 // manage all order page
 const ManageOrder = () => {
   const [services, setServices] = useState([]);
-  console.log(services);
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     fetch("https://dry-springs-45695.herokuapp.com/orders")
       .then((res) => res.json())
@@ -16,7 +15,7 @@ const ManageOrder = () => {
         setServices(data);
         setIsLoading(true);
       });
-  }, []);
+  }, [isLoading]);
 
   if (!isLoading) {
     return (
@@ -44,16 +43,24 @@ const ManageOrder = () => {
     }
   };
 
-  // const handelChange = (index) => {
-  //   const data = [...services];
-  //   const row = data[index];
-  //   console.log(row);
-  //   row.status = "approved";
-  //   console.log(row.status);
-  //   // data.splice(index, 1, row);
-  //   // setServices({ data });
-  //   data[index] = row.status;
-  // };
+  const handelChange = (id) => {
+    const data = services?.find((pd) => pd?._id === id);
+    data.status = "Approved";
+    console.log(data);
+    fetch(`http://localhost:5000/orders/${id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          setIsLoading(false);
+        }
+      });
+  };
 
   return (
     <>
@@ -94,7 +101,7 @@ const ManageOrder = () => {
                   <td>{product?.person}</td>
                   <td>
                     <button
-                      // onClick={() => handelChange(index)}
+                      onClick={() => handelChange(product?._id)}
                       className="btn-regular delete-order"
                     >
                       {" "}

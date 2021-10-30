@@ -6,11 +6,10 @@ import "./MyOrder.css";
 
 const MyOrders = () => {
   const [orders, setOrders] = useState([]);
-  console.log(orders);
 
   const { user } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
-  // https://dry-springs-45695.herokuapp.com
+
   useEffect(() => {
     fetch(`https://dry-springs-45695.herokuapp.com/orders/${user?.email}`)
       .then((res) => res.json())
@@ -29,7 +28,6 @@ const MyOrders = () => {
   }
 
   const handelDelete = (id) => {
-    console.log(id);
     const procedd = window.confirm("Are you sure you want to delete?");
     if (procedd) {
       fetch(`https://dry-springs-45695.herokuapp.com/delete/${id}`, {
