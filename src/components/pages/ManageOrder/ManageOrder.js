@@ -13,11 +13,11 @@ const ManageOrder = () => {
       .then((res) => res.json())
       .then((data) => {
         setServices(data);
-        setIsLoading(true);
+        setIsLoading(false);
       });
   }, [isLoading]);
 
-  if (!isLoading) {
+  if (isLoading) {
     return (
       <div className="mx-auto mt-5" style={{ width: "50px" }}>
         <Spinner animation="border" variant="warning" />
@@ -26,7 +26,6 @@ const ManageOrder = () => {
   }
 
   const handelDelete = (id) => {
-    console.log(id);
     const procedd = window.confirm("Are you sure you want to delete?");
     if (procedd) {
       fetch(`https://dry-springs-45695.herokuapp.com/orders/${id}`, {
@@ -46,7 +45,7 @@ const ManageOrder = () => {
   const handelChange = (id) => {
     const data = services?.find((pd) => pd?._id === id);
     data.status = "Approved";
-    console.log(data);
+    // console.log(data);
     fetch(`https://dry-springs-45695.herokuapp.com/orders/${id}`, {
       method: "PUT",
       headers: {
@@ -57,7 +56,7 @@ const ManageOrder = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
-          setIsLoading(false);
+          setIsLoading(true);
         }
       });
   };
