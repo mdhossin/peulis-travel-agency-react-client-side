@@ -47,7 +47,7 @@ const ManageOrder = () => {
     const data = services?.find((pd) => pd?._id === id);
     data.status = "Approved";
     console.log(data);
-    fetch(`http://localhost:5000/orders/${id}`, {
+    fetch(`https://dry-springs-45695.herokuapp.com/orders/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
