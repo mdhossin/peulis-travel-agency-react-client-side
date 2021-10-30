@@ -30,7 +30,7 @@ const ManageOrder = () => {
     console.log(id);
     const procedd = window.confirm("Are you sure you want to delete?");
     if (procedd) {
-      fetch(`http://localhost:5000/orders/${id}`, {
+      fetch(`https://dry-springs-45695.herokuapp.com/orders/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

@@ -12,7 +12,7 @@ const MyOrders = () => {
   const [isLoading, setIsLoading] = useState(false);
   // https://dry-springs-45695.herokuapp.com
   useEffect(() => {
-    fetch(`http://localhost:5000/orders/${user?.email}`)
+    fetch(`https://dry-springs-45695.herokuapp.com/orders/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);
