@@ -6,6 +6,7 @@ import Footer from "../../Footer/Footer";
 // manage all order page
 const ManageOrder = () => {
   const [services, setServices] = useState([]);
+  console.log(services);
 
   const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
@@ -26,9 +27,10 @@ const ManageOrder = () => {
   }
 
   const handelDelete = (id) => {
+    console.log(id);
     const procedd = window.confirm("Are you sure you want to delete?");
     if (procedd) {
-      fetch(`https://dry-springs-45695.herokuapp.com/manageorder/${id}`, {
+      fetch(`http://localhost:5000/orders/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -41,6 +43,17 @@ const ManageOrder = () => {
         });
     }
   };
+
+  // const handelChange = (index) => {
+  //   const data = [...services];
+  //   const row = data[index];
+  //   console.log(row);
+  //   row.status = "approved";
+  //   console.log(row.status);
+  //   // data.splice(index, 1, row);
+  //   // setServices({ data });
+  //   data[index] = row.status;
+  // };
 
   return (
     <>
@@ -68,22 +81,30 @@ const ManageOrder = () => {
               </tr>
             </thead>
             <tbody>
-              {services?.map((service) => (
-                <tr className="mt-4">
+              {services?.map((product, index) => (
+                <tr key={product._id} className="mt-4">
                   <td className="img-table">
                     <Card.Img
                       className="manage-img me-3"
-                      src={service?.image}
+                      src={product?.service?.image}
                     />
-                    {service?.name}
+                    {product?.service?.name}
                   </td>
-                  <td>{service?.data?.user}</td>
-                  <td>{service?.data?.person}</td>
-                  <td>{service?.status}</td>
+                  <td>{product?.user}</td>
+                  <td>{product?.person}</td>
                   <td>
                     <button
-                      onClick={() => handelDelete(service?._id)}
+                      // onClick={() => handelChange(index)}
                       className="btn-regular delete-order"
+                    >
+                      {" "}
+                      {product?.status}
+                    </button>
+                  </td>
+                  <td>
+                    <button
+                      onClick={() => handelDelete(product?._id)}
+                      className="btn-regular btn-delete"
                     >
                       Delete{" "}
                     </button>

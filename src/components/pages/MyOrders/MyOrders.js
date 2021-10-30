@@ -6,12 +6,13 @@ import "./MyOrder.css";
 
 const MyOrders = () => {
   const [orders, setOrders] = useState([]);
+  console.log(orders);
 
   const { user } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
-
+  // https://dry-springs-45695.herokuapp.com
   useEffect(() => {
-    fetch(`https://dry-springs-45695.herokuapp.com/orders/${user?.email}`)
+    fetch(`http://localhost:5000/orders/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);
@@ -28,6 +29,7 @@ const MyOrders = () => {
   }
 
   const handelDelete = (id) => {
+    console.log(id);
     const procedd = window.confirm("Are you sure you want to delete?");
     if (procedd) {
       fetch(`https://dry-springs-45695.herokuapp.com/delete/${id}`, {
@@ -70,23 +72,23 @@ const MyOrders = () => {
               </tr>
             </thead>
             <tbody>
-              {orders?.map((service) => (
-                <tr>
+              {orders?.map((order) => (
+                <tr key={order?._id}>
                   <td className="img-table">
                     <Card.Img
                       className="manage-img me-3"
-                      src={service?.image}
+                      src={order?.service?.image}
                     />
-                    {service?.name}
+                    {order?.service?.name}
                   </td>
-                  <td>{service?.data?.user}</td>
-                  <td>{service?.data?.person}</td>
-                  <td>${service?.price}</td>
-                  <td>{service?.status}</td>
+                  <td>{order?.user}</td>
+                  <td>{order?.person}</td>
+                  <td>${order?.service?.price}</td>
+                  <td>{order?.status}</td>
                   <td>
                     <button
-                      onClick={() => handelDelete(service?._id)}
-                      className="btn-regular delete-order"
+                      onClick={() => handelDelete(order?._id)}
+                      className="btn-regular btn-delete"
                     >
                       Delete{" "}
                     </button>

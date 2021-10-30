@@ -3,14 +3,11 @@ import { useLocation, useHistory } from "react-router-dom";
 import swal from "sweetalert";
 import googleImg from "../../../images/google.png";
 import Footer from "../../Footer/Footer";
-
 import useAuth from "../../hooks/useAuth";
-
 import "./Login.css";
 // login page
 const Login = () => {
   const { signInWithGoogle, setUser } = useAuth();
-
   const location = useLocation();
   const history = useHistory();
 

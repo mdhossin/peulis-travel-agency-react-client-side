@@ -26,3 +26,16 @@
 .img-table {
   width: 30%;
 }
+.delete-order {
+  background-color: #1ec8e7;
+  padding: 5px 25px;
+  color: rgb(75, 75, 75);
+}
+.delete-order:hover {
+  background-color: #92e9fa !important;
+}
+.btn-delete {
+  padding: 5px 25px;
+  /* color: #db132a !important; */
+  background-color: #d8341b;
+}

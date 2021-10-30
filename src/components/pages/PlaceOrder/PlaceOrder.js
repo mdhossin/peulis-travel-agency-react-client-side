@@ -9,18 +9,15 @@ import useAuth from "../../hooks/useAuth";
 const PlaceOrder = () => {
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
-
   const {
     register,
     handleSubmit,
-
     formState: { errors },
     reset,
   } = useForm();
-
   const { user } = useAuth();
-
   const [product, setProduct] = useState({});
+
   useEffect(() => {
     fetch(`https://dry-springs-45695.herokuapp.com/products/${id}`)
       .then((res) => res.json())
@@ -31,13 +28,13 @@ const PlaceOrder = () => {
   }, []);
 
   const onSubmit = (data) => {
-    product.data = data;
-    product.email = user?.email;
-    product.status = "Pending";
+    data.service = product;
+    data.email = user?.email;
+    data.status = "Pending";
     fetch("https://dry-springs-45695.herokuapp.com/placeorder", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify(product),
+      body: JSON.stringify(data),
     })
       .then((res) => res.json())
       .then((result) => {
