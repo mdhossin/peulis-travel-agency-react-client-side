@@ -1,0 +1,46 @@
+.service-heading {
+  color: #444444;
+  font-size: 42px;
+}
+.heading-border {
+  position: relative;
+}
+
+.all-services .heading-border::after {
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+}
+
+.heading-border::after {
+  position: absolute;
+  content: "";
+  bottom: -10px;
+  left: 0;
+  width: 33px;
+  height: 3px;
+  background-color: #f59f97;
+}
+.btn-regular {
+  border: none;
+  font-size: 16px;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  background: #ff6d34;
+  color: #fff;
+  border-radius: 23px;
+  text-transform: capitalize;
+  font-weight: 600;
+  -webkit-border-radius: 23px;
+  -moz-border-radius: 23px;
+  -ms-border-radius: 23px;
+  -o-border-radius: 23px;
+  transition: 0.3s all ease-in;
+  -webkit-transition: 0.3s all ease-in;
+  -moz-transition: 0.3s all ease-in;
+  -ms-transition: 0.3s all ease-in;
+  -o-transition: 0.3s all ease-in;
+}
+.btn-regular:hover {
+  background-color: #df460a;
+}

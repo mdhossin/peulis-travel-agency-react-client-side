@@ -1,0 +1,22 @@
+.about-background {
+  min-height: 100%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.945)),
+    url("../../images/about.jpg") fixed;
+  background-size: cover;
+}
+.about-text {
+  padding: 100px;
+  color: white;
+}
+.about-heading {
+  color: #444444;
+}
+.about-heading p {
+  letter-spacing: 0.5px;
+}
+
+@media only screen and (max-width: 688px) {
+  .about-heading {
+    margin-bottom: 30px;
+  }
+}

@@ -1,0 +1,38 @@
+.single-img img {
+  width: 90px;
+  height: 90px;
+}
+.single-card {
+  background-color: #ffffff;
+  color: black;
+  border: none;
+}
+
+.single-img p {
+  font-size: 36px;
+  color: #e6e6e6;
+  font-weight: 700;
+}
+
+.card-hover {
+  border: none;
+  transition: 0.3s all ease-in;
+  -webkit-transition: 0.3s all ease-in;
+  -moz-transition: 0.3s all ease-in;
+  -ms-transition: 0.3s all ease-in;
+  -o-transition: 0.3s all ease-in;
+}
+
+.card-hover:hover {
+  transform: scale(0.98);
+  -webkit-transform: scale(0.98);
+  -moz-transform: scale(0.98);
+  -ms-transform: scale(0.98);
+  -o-transform: scale(0.98);
+}
+
+@media only screen and (max-width: 688px) {
+  .card-magin {
+    margin: 20px 0;
+  }
+}

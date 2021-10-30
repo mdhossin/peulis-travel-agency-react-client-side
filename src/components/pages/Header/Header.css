@@ -1,0 +1,14 @@
+/* color : #8F8F99 */
+
+.bg-color .nav-item {
+  letter-spacing: 1.5px;
+}
+.bg-color {
+  background-color: #ffffff;
+}
+.navbar-logo {
+  width: 150px;
+}
+.main-nav {
+  display: flex !important;
+}

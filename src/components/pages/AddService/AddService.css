@@ -1,0 +1,31 @@
+.form-box {
+  margin: 0 auto;
+  width: 65%;
+  text-align: center;
+  padding: 10px 40px;
+  background-color: #081229 !important;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.change-background {
+  background-color: #111c36;
+  color: white;
+  padding: 40px;
+}
+.change-background h1 {
+  font-size: 42px;
+}
+
+@media only screen and (max-width: 688px) {
+  .form-box {
+    width: 100%;
+    padding: 5px 25px;
+  }
+  .change-background h1 {
+    font-size: 36px;
+  }
+}

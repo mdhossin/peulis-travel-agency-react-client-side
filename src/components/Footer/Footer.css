@@ -1,0 +1,27 @@
+.background-footer {
+  background-color: #060f24;
+  color: #c9c9c9;
+}
+
+.phone-icon {
+  font-size: 18px;
+  margin-right: 5px;
+}
+.icon {
+  font-size: 28px;
+  color: #fc6124;
+}
+.instagram img {
+  width: 28px;
+  height: 28px;
+}
+.background-footer .footer-img {
+  width: 210px !important;
+}
+.background-footer h5 {
+  color: white;
+}
+.background-footer h2 {
+  color: white;
+  margin-top: 20px;
+}

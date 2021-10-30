@@ -1,0 +1,8 @@
+.delete-order {
+  background-color: #df4759;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+.delete-order:hover {
+  background-color: #f3374d !important;
+}
