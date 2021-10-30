@@ -58,7 +58,7 @@ const ManageOrder = () => {
         </div>
 
         <div className="my-5">
-          <Table striped bordered hover>
+          <Table striped bordered hover responsive>
             <thead>
               <tr>
                 <th className="text-center">Tour Detail</th>
@@ -70,7 +70,7 @@ const ManageOrder = () => {
             </thead>
             <tbody>
               {services?.map((service) => (
-                <tr>
+                <tr className="mt-4">
                   <td className="img-table">
                     <Card.Img
                       className="manage-img me-3"

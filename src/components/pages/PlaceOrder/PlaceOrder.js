@@ -68,12 +68,15 @@ const PlaceOrder = () => {
           </div>
         </div>
         <div>
-          <Row>
-            <Col xs={6} md={6}>
-              <div className="d-flex align-items-center pb-3">
+          <Row className="place-order-box">
+            <Col xs={12} md={6}>
+              <div className="d-flex align-items-center pb-3 description-box">
                 <h2 style={{ color: "#444444" }}>{product?.name}</h2>
-                <span className="fw-bold ms-5">
-                  <small style={{ color: "#ff6d34", fontSize: "22px" }}>
+                <span className="fw-bold ms-5 main-price">
+                  <small
+                    className="price-text"
+                    style={{ color: "#ff6d34", fontSize: "22px" }}
+                  >
                     ${product?.price}
                   </small>{" "}
                   / Per Person
@@ -84,7 +87,7 @@ const PlaceOrder = () => {
                 <p className="mt-4 product-text">{product?.description}</p>
               </div>
             </Col>
-            <Col xs={6} md={6}>
+            <Col xs={12} md={6} className="form-description">
               <div className="form-box">
                 <form className="mt-5" onSubmit={handleSubmit(onSubmit)}>
                   {/* register your input into the hook by invoking the "register" function */}

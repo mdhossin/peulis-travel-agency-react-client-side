@@ -1,7 +1,7 @@
 import { faHourglassHalf } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
-import { Card, Spinner } from "react-bootstrap";
+import { Card, Spinner, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 import useAuth from "../../hooks/useAuth";
@@ -62,56 +62,44 @@ const MyOrders = () => {
             </h1>
           </div>
         </div>
-        <div className="row row-cols-1 row-cols-md-3 mt-4 g-4 pb-5">
-          {orders?.map((product, index) => (
-            <div key={product?._id}>
-              <Card className="h-100 shadow card-hover">
-                <Card.Img
-                  className="sevices-img"
-                  variant="top"
-                  src={product?.image}
-                />
-                <Card.Body>
-                  <Card.Title className="card-title title-card">
-                    <div className="heading-border mb-3">
-                      <h3> {product?.name}</h3>
-                    </div>
-                    <div>
-                      <small className="my-2" style={{ color: "#45464E" }}>
-                        <FontAwesomeIcon
-                          style={{ color: "#ff6d34" }}
-                          className="me-1"
-                          icon={faHourglassHalf}
-                        />
-                        {product?.time}
-                      </small>
-                    </div>
-                  </Card.Title>
-                  <Card.Text>
-                    {product?.description.slice(0, 120)}
-                    <Link className="learn-more" to="/">
-                      {" "}
-                      ...Read more
-                    </Link>
-                  </Card.Text>
-                </Card.Body>
-
-                <Card.Footer className="card-footer card-btn">
-                  <div>
+        <div className="my-5">
+          <Table striped bordered hover responsive>
+            <thead>
+              <tr>
+                <th className="text-center">Tour Detail</th>
+                <th>User Name</th>
+                <th>Person</th>
+                <th>Price</th>
+                <th>Status</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              {orders?.map((service) => (
+                <tr>
+                  <td className="img-table">
+                    <Card.Img
+                      className="manage-img me-3"
+                      src={service?.image}
+                    />
+                    {service?.name}
+                  </td>
+                  <td>{service?.data?.user}</td>
+                  <td>{service?.data?.person}</td>
+                  <td>${service?.price}</td>
+                  <td>{service?.status}</td>
+                  <td>
                     <button
-                      onClick={() => handelDelete(product?._id)}
+                      onClick={() => handelDelete(service?._id)}
                       className="btn-regular delete-order"
                     >
-                      Delete
+                      Delete{" "}
                     </button>
-                  </div>
-                  <div className="card-price">
-                    <p>${product?.price}</p>
-                  </div>
-                </Card.Footer>
-              </Card>
-            </div>
-          ))}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
         </div>
       </div>
       <Footer></Footer>
