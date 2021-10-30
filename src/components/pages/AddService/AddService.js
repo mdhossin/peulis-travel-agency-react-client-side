@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import Footer from "../../Footer/Footer";
 import "./AddService.css";
-
+// add service page
 const AddService = () => {
   const {
     register,

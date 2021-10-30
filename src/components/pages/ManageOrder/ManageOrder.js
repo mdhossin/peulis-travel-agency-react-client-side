@@ -3,10 +3,9 @@ import { Card, Spinner, Table } from "react-bootstrap";
 
 import "./ManageOrder.css";
 import Footer from "../../Footer/Footer";
-
+// manage all order page
 const ManageOrder = () => {
   const [services, setServices] = useState([]);
-  console.log(services);
 
   const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {

@@ -15,6 +15,7 @@
   letter-spacing: 0.5px;
 }
 
+/* responsive for mobile desgin */
 @media only screen and (max-width: 688px) {
   .about-heading {
     margin-bottom: 30px;

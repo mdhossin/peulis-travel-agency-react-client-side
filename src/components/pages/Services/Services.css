@@ -5,7 +5,7 @@
 .heading-border {
   position: relative;
 }
-
+/* golbally use border style for heading */
 .all-services .heading-border::after {
   left: 50%;
   transform: translateX(-50%);
@@ -21,6 +21,7 @@
   height: 3px;
   background-color: #f59f97;
 }
+/* globally use this button */
 .btn-regular {
   border: none;
   font-size: 16px;

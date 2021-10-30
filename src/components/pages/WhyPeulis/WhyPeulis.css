@@ -13,7 +13,7 @@
   color: #e6e6e6;
   font-weight: 700;
 }
-
+/* globally use this card style */
 .card-hover {
   border: none;
   transition: 0.3s all ease-in;
@@ -30,7 +30,7 @@
   -ms-transform: scale(0.98);
   -o-transform: scale(0.98);
 }
-
+/* responsive for mobile */
 @media only screen and (max-width: 688px) {
   .card-magin {
     margin: 20px 0;

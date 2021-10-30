@@ -4,7 +4,7 @@ import sliderOne from "../../../images/banner/9.jpg";
 import sliderTwo from "../../../images/banner/7.jpg";
 import sliderThree from "../../../images/banner/8.jpg";
 import "./Banner.css";
-
+// banner page
 const Banner = () => {
   return (
     <div>

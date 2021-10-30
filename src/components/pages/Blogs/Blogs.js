@@ -7,7 +7,7 @@ import blogOne from "../../../images/blog/blog-1.png";
 import blogTwo from "../../../images/blog/blog-2.png";
 
 import "./Blogs.css";
-
+// blogs page
 const Blogs = () => {
   return (
     <div className="container my-5">

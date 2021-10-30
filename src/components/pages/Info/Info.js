@@ -2,7 +2,7 @@ import React from "react";
 import { Col, Row } from "react-bootstrap";
 import infoImg from "../../../images/info.jpg";
 import "./Info.css";
-
+// info page
 const Info = () => {
   return (
     <div className="mt-5">

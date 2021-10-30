@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Row, Spinner } from "react-bootstrap";
 import Service from "../Service/Service";
 import "./Services.css";
+// all services here
 const Services = () => {
   const [services, setServices] = useState([]);
   const [isLoading, setIsLoading] = useState(true);

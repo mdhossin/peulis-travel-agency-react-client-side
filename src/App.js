@@ -11,7 +11,7 @@ import AuthProvider from "./components/Contexts/AuthProvider";
 import Login from "./components/pages/Login/Login";
 import PrivateRoute from "./components/pages/PrivateRoute/PrivateRoute";
 import NotFound from "./components/pages/NotFound/NotFound";
-
+// rendering the all components here
 function App() {
   return (
     <AuthProvider>

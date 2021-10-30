@@ -1,17 +1,12 @@
-import { faHourglassHalf } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { Card, Spinner, Table } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 import useAuth from "../../hooks/useAuth";
 import "./MyOrder.css";
 
 const MyOrders = () => {
   const [orders, setOrders] = useState([]);
-  console.log(orders);
 
-  // console.log(orders);
   const { user } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
 

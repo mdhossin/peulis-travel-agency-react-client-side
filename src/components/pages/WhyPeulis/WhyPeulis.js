@@ -4,7 +4,7 @@ import imgOne from "../../../images/why/choose-1.png";
 import imgTwo from "../../../images/why/choose-2.png";
 import imgThree from "../../../images/why/choose-3.png";
 import "./WhyPeulis.css";
-
+// why peulis choose
 const WhyPeulis = () => {
   return (
     <>

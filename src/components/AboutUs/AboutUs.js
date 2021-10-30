@@ -3,6 +3,7 @@ import { Col, Row } from "react-bootstrap";
 import "./AboutUs.css";
 import aboutImg from "../../images/about-2.jpg";
 import Footer from "../Footer/Footer";
+// this is about us page
 const AboutUs = () => {
   return (
     <>

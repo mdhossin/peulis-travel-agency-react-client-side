@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import "./Service.css";
 
 const Service = (props) => {
-  const { _id, name, price, rating, time, image, description } = props?.service;
+  const { _id, name, price, time, image, description } = props?.service;
   return (
     <div>
       <Card className="h-100 shadow card-hover">

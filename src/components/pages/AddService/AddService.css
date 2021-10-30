@@ -19,6 +19,7 @@
 .change-background h1 {
   font-size: 42px;
 }
+/* responsive for mobile design */
 
 @media only screen and (max-width: 688px) {
   .form-box {

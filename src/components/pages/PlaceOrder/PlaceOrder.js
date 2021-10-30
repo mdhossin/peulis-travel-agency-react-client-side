@@ -5,7 +5,7 @@ import { useParams } from "react-router";
 import "./PlaceOrder.css";
 import Footer from "../../Footer/Footer";
 import useAuth from "../../hooks/useAuth";
-
+// placeorder page for order
 const PlaceOrder = () => {
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
@@ -19,9 +19,7 @@ const PlaceOrder = () => {
   } = useForm();
 
   const { user } = useAuth();
-  // console.log(user.email);
 
-  // console.log(id);
   const [product, setProduct] = useState({});
   useEffect(() => {
     fetch(`https://dry-springs-45695.herokuapp.com/products/${id}`)
@@ -35,9 +33,7 @@ const PlaceOrder = () => {
   const onSubmit = (data) => {
     product.data = data;
     product.email = user?.email;
-
     product.status = "Pending";
-
     fetch("https://dry-springs-45695.herokuapp.com/placeorder", {
       method: "POST",
       headers: { "content-type": "application/json" },

@@ -1,7 +1,7 @@
 .info-heading {
   font-size: 48px;
 }
-
+/* responive for mobile */
 @media only screen and (max-width: 688px) {
   .info-heading {
     margin-top: 15px;
