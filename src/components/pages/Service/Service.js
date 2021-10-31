@@ -14,10 +14,10 @@ const Service = (props) => {
         <Card.Body>
           <Card.Title className="card-title title-card">
             <div className="heading-border mb-3">
-              <h3> {name}</h3>
+              <h3 style={{ color: "#444444" }}> {name}</h3>
             </div>
-            <div>
-              <small className="my-2" style={{ color: "#45464E" }}>
+            <div className="service-time">
+              <small className="my-5" style={{ color: "#45464E" }}>
                 <FontAwesomeIcon
                   style={{ color: "#ff6d34" }}
                   className="me-1"

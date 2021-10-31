@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Card, Spinner, Table } from "react-bootstrap";
+import swal from "sweetalert";
 
 import "./ManageOrder.css";
 import Footer from "../../Footer/Footer";
@@ -34,7 +35,7 @@ const ManageOrder = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data?.deletedCount > 0) {
-            alert("Deleted successfully done");
+            swal("Good job!", "Deleted successfully", "success");
             const remaining = services?.filter((product) => product._id !== id);
             setServices(remaining);
           }
@@ -81,6 +82,7 @@ const ManageOrder = () => {
               <tr>
                 <th className="text-center">Tour Detail</th>
                 <th>User Name</th>
+                <th>Date</th>
                 <th>Person</th>
                 <th>Status</th>
                 <th>Delete</th>
@@ -97,6 +99,7 @@ const ManageOrder = () => {
                     {product?.service?.name}
                   </td>
                   <td>{product?.user}</td>
+                  <td>{product?.date}</td>
                   <td>{product?.person}</td>
                   <td>
                     <button

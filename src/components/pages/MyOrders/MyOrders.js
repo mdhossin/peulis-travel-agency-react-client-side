@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Card, Spinner, Table } from "react-bootstrap";
+import swal from "sweetalert";
 import Footer from "../../Footer/Footer";
 import useAuth from "../../hooks/useAuth";
 import "./MyOrder.css";
@@ -36,7 +37,7 @@ const MyOrders = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data?.deletedCount > 0) {
-            alert("Deleted successfully done");
+            swal("Good job!", "Deleted successfully", "success");
             const remaining = orders?.filter((product) => product._id !== id);
             setOrders(remaining);
           }
@@ -64,7 +65,7 @@ const MyOrders = () => {
                 <th className="text-center">Tour Detail</th>
                 <th>User Name</th>
                 <th>Person</th>
-                <th>Price</th>
+                <th>Date</th>
                 <th>Status</th>
                 <th>Delete</th>
               </tr>
@@ -81,7 +82,7 @@ const MyOrders = () => {
                   </td>
                   <td>{order?.user}</td>
                   <td>{order?.person}</td>
-                  <td>${order?.service?.price}</td>
+                  <td>{order?.date}</td>
                   <td>{order?.status}</td>
                   <td>
                     <button

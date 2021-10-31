@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import swal from "sweetalert";
 import Footer from "../../Footer/Footer";
 import "./AddService.css";
 // add service page
@@ -23,7 +24,7 @@ const AddService = () => {
       .then((result) => {
         console.log(result.insertedId);
         if (result.insertedId) {
-          alert("Product added successfully");
+          swal("Good job!", "Service added successfully", "success");
           reset();
         }
       });

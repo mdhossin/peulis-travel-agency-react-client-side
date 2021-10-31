@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Col, Row, Spinner } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router";
+import swal from "sweetalert";
 import "./PlaceOrder.css";
 import Footer from "../../Footer/Footer";
 import useAuth from "../../hooks/useAuth";
@@ -39,7 +40,7 @@ const PlaceOrder = () => {
       .then((res) => res.json())
       .then((result) => {
         if (result.insertedId) {
-          alert("Order processed successfully");
+          swal("Good job!", "Order processed successfully", "success");
           reset();
         }
       });
