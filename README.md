@@ -7,3 +7,4 @@
 - Have blog page , about us page and many more you can get many information from this website
 - This website fully responsive for mobile and laptop version
 - You can contact us for more info
+- Useing tecnology React, React-bootstrap, React-router-dom, Firebase-authentication, React-hook-form, css, SweetAlert, etc
