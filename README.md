@@ -1,9 +1,9 @@
 # Welcome to your Tourism and Travel website
 
 - This website based for tourism vist this link more info (https://delivery-authentication.web.app/)
-- This website you can add your favourite tour place add image, price, details and much more
-- You can buy your favourite tour place also remove your order list if you dont't need to go
-- Here you can sign in with google before buying a tour place
+- Travel service website user can buy a new service or remove service
+- Can add a new service it will be displayed home service page
+- Have firebase authentication system user can register or login 
 - Have blog page , about us page and many more you can get many information from this website
 - This website fully responsive for mobile and laptop version
 - You can contact us for more info
